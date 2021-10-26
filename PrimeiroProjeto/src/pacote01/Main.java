@@ -13,5 +13,7 @@ public class Main {
 
         Double height = Double.parseDouble(JOptionPane.showInputDialog("Enter your height"));
         JOptionPane.showMessageDialog(null, "You are  " +height+ " cm tall");
+
+        System.out.println("Seu nome é: " +name + "Esta é sua idade: " +age + "Esta é sua Altura: " +height );
     } 
 }
