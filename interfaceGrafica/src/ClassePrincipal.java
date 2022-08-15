@@ -9,7 +9,10 @@ public class ClassePrincipal {
         int ano = Integer.parseInt(JOptionPane.showInputDialog("Entre com seu ano "));
         JOptionPane.showMessageDialog(null, "Você nasceu em :  " + ano); 
 
-
+        double altura = Double.parseDouble(JOptionPane.showInputDialog("Qual a sua altura?  "));
+        JOptionPane.showMessageDialog(null, "Você tem :  " + altura + " metros de altura");
         
     }
+
+
 }
