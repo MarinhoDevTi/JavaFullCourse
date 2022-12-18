@@ -3,8 +3,8 @@ public class Principal {
         
         // for loop = executes a block of code a limited amount of times
 
-        for (int i = 0; i < args.length; i++) {
-            
+        for (int i = 0; i <= 10; i++) {
+            System.out.println("Posição: " + i);            
         }
     }
 }
