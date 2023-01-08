@@ -111,7 +111,7 @@ public class GamePainel extends JPanel implements ActionListener{
             
         }
         //check if head touches left boreder
-        if
+        if (x[0])
 
     }
     public void gameOver(Graphics g){
