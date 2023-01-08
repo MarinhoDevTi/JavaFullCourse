@@ -64,6 +64,10 @@ public class GamePainel extends JPanel implements ActionListener{
             if (i == 0){
                 g.setColor(Color.green);
                 g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
+            } 
+            else {
+                g.setColor(new Color(45,180,0));
+                g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
             }
         }
         
@@ -98,6 +102,16 @@ public class GamePainel extends JPanel implements ActionListener{
 
     }
     public void checkCollisions(){
+        //checks if head collides with body
+        for (int i = bodyParts; i > 0; i--) {
+            if((x[0] == x[i]) && (y[0] == y[i])) {
+                running = false;
+
+            }
+            
+        }
+        //check if head touches left boreder
+        if
 
     }
     public void gameOver(Graphics g){
@@ -106,7 +120,14 @@ public class GamePainel extends JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+        
+        if(running) {
+            move();
+            checkApple();
+            checkCollisions();
+        }
+        repaint();
+
         
     }
 
