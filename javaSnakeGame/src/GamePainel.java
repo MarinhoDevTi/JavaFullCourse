@@ -80,7 +80,7 @@ public class GamePainel extends JPanel implements ActionListener{
     public void move(){
         for (int i = bodyParts; i > 0; i--) {
             x[i] = x[i - 1];
-            y[1] = y[i - 1];
+            y[i] = y[i - 1];     
         }
         switch(direction) {
         case 'U':
@@ -99,7 +99,12 @@ public class GamePainel extends JPanel implements ActionListener{
 
     }
     public void checkApple(){
-        if ((x[0 == appleX]))
+        if ((x[0] == appleX) && (y[0] == appleY)){
+            bodyParts++;
+            applesEaten++;
+            newApple();
+
+        }
 
     }
     public void checkCollisions(){
@@ -107,8 +112,7 @@ public class GamePainel extends JPanel implements ActionListener{
         for (int i = bodyParts; i > 0; i--) {
             if((x[0] == x[i]) && (y[0] == y[i])) {
                 running = false;
-            }
-            
+            }            
         }
         //check if head touches left boreder
         if (x[0] < 0) {
@@ -128,11 +132,15 @@ public class GamePainel extends JPanel implements ActionListener{
         } 
         if (!running) {
             timer.stop();
-
         }       
 
     }
     public void gameOver(Graphics g){
+        //Gave Over Text
+        g.setColor(Color.red); 
+        g.setFont(new Font("Ink Free", Font.BOLD, 75));
+        FontMetrics metrics = getFontMetrics(g.getFont()); 
+        g.drawString(null, ALLBITS, ABORT);
 
     }
 
@@ -151,6 +159,7 @@ public class GamePainel extends JPanel implements ActionListener{
 
     public class MyKeyAdapter extends KeyAdapter{
         @Override
+        
         public void keyPressed(KeyEvent e ) {
             switch(e.getKeyCode()){
                 case KeyEvent.VK_LEFT:
@@ -178,7 +187,7 @@ public class GamePainel extends JPanel implements ActionListener{
              
         }
 
-    }
-    
+    }  
+
     
 }
